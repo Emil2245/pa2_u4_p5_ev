@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	      name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<title>Document</title>
+	
+</head>
+<body >
+<div >
+	<form th:action="@{/personas/actualizar/{cedu}(cedu=${persona.cedula})}"
+	      th:method="PUT" th:object="${actualizarPersona}">
+		<table>
+			<tr>
+				<td><label>Nombre</label></td>
+				<td><input th:field="${persona.nombre}" type="text"></td>
+			</tr>
+			<tr>
+				<td><label>Apellido</label></td>
+				<td><input th:field="${persona.apellido}" type="text"></td>
+			</tr>
+			<tr>
+				<td><label>Cédula</label></td>
+				<td><input th:field="${persona.cedula}" type="text"></td>
+			</tr>
+			<tr>
+				<td><label>Genero</label></td>
+				<td><input th:field="${persona.genero}" type="text"></td>
+			</tr>
+		
+		</table>
+		
+		<button type="submit">Actualizar</button>
+	</form>
+</div>
+</body>
+</html>
